@@ -5,5 +5,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let note of notes">
+      <ion-avatar><ion-img [src]=""></ion-img></ion-avatar>
+      <ion-text> {{note.title}} </ion-text>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
