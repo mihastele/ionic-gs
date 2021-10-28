@@ -7,10 +7,18 @@ const routes: Routes = [
     redirectTo: 'notes',
     pathMatch: 'full'
   },
-  {
-    path: 'notes',
-    loadChildren: () => import('./notes/notes.module').then( m => m.NotesPageModule)
-  },
+  {path: 'notes',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./notes/notes.module').then(m => m.NotesPageModule)
+      },
+      {
+        path: ':noteId',
+        loadChildren: () => import('./notes/note-detail/note-detail.module').then( m => m.NoteDetailPageModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({
