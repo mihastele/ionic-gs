@@ -37,8 +37,6 @@ export class NoteDetailPage implements OnInit {
        this.notesService.deleteNote(this.loadedNote.id);
        this.router.navigate(['/notes']);
      }}]}).then(alrertEl => alrertEl.present());
-    this.notesService.deleteNote(this.loadedNote.id);
-    this.router.navigate(['notes']);
   }
 
 }
