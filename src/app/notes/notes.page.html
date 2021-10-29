@@ -6,10 +6,8 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let note of notes">
-      <ion-avatar><ion-img [src]=""></ion-img></ion-avatar>
-      <ion-text> {{note.title}} </ion-text>
-    </ion-item>
+
+    <app-note-item *ngFor="let note of notes" [noteItem]="note"></app-note-item>
   </ion-list>
 
 </ion-content>

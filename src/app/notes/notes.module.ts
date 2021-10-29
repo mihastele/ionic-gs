@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { NotesPageRoutingModule } from './notes-routing.module';
 
 import { NotesPage } from './notes.page';
+import { NoteItemComponent } from './note-item/note-item.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { NotesPage } from './notes.page';
     IonicModule,
     NotesPageRoutingModule
   ],
-  declarations: [NotesPage]
+  declarations: [NotesPage, NoteItemComponent]
 })
 export class NotesPageModule {}
