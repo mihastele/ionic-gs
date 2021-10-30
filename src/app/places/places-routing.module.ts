@@ -5,20 +5,34 @@ import { PlacesPage } from './places.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: PlacesPage
+    path: 'tabs',
+    component: PlacesPage,
+    children: [
+      {
+        path: 'discover',
+        loadChildren: () => import('./discover/discover.module').then(m => m.DiscoverPageModule)
+      },
+      {
+        path: 'offers',
+        loadChildren: () => import('./offers/offers.module').then(m => m.OffersPageModule)
+      },
+      {
+        path: '',
+        redirectTo: '/places/tabs/discover',
+        pathMatch: 'full'
+      }
+    ]
   },
+  /*
   {
     path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },
+    loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
+  },*/
+
   {
-    path: 'discover',
-    loadChildren: () => import('./discover/discover.module').then( m => m.DiscoverPageModule)
-  },
-  {
-    path: 'offers',
-    loadChildren: () => import('./offers/offers.module').then( m => m.OffersPageModule)
+    path: '',
+    redirectTo: '/places/tabs/discover',
+    pathMatch: 'full'
   }
 ];
 
@@ -26,4 +40,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PlacesPageRoutingModule {}
+export class PlacesPageRoutingModule { }
