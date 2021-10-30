@@ -1,4 +1,13 @@
-<ion-item [routerLink]="['/notes', noteItem.id]" >
-  <ion-avatar><ion-img [src]=""></ion-img></ion-avatar>
-  <ion-text> {{noteItem.title}} </ion-text>
+<ion-item [routerLink]="['/notes', noteItem.id]">
+  <ion-label class="ion-text-wrap">
+    <ion-avatar>
+      <ion-thumbnail slot="start"> <ion-img [src]=""></ion-img> </ion-thumbnail
+    ></ion-avatar>
+    <ion-label>{{ noteItem.title }}</ion-label>
+    <ion-text color="secondary">
+      <p>
+        {{ noteItem.body }}
+      </p>
+    </ion-text>
+  </ion-label>
 </ion-item>

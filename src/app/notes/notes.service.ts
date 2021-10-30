@@ -13,6 +13,7 @@ export class NotesService {
     id: 'aw12w',
     title: 'Aaaaa',
     body: '1122k1č4mjklmlkmalmascv.das md',
+    searchtags: [],
     attachmentUrls: []
   },
 
@@ -24,6 +25,7 @@ export class NotesService {
     asdasd
     asd
     dass md`,
+    searchtags: [],
     attachmentUrls: ['./seee']
   },
 
@@ -31,16 +33,18 @@ export class NotesService {
     id: 'aw1331w',
     title: 'BOSMVB',
     body: '1122k1č4mjklmlkmalmascasfafsasfavasfasfasff',
+    searchtags: [],
     attachmentUrls: []
   },
   {
     id: 'aw1322w',
     title: 'Čokolino',
     body: '1122k1č4mjkasfafasfsafasfasas md',
+    searchtags: [],
     attachmentUrls: []
   }
 
-];
+  ];
 
   constructor() { }
 
@@ -48,11 +52,11 @@ export class NotesService {
     return [...this.notes];
   }
 
-  getNote(noteId){
-    return {...this.notes.find(note => note.id === noteId )};
+  getNote(noteId) {
+    return { ...this.notes.find(note => note.id === noteId) };
   }
 
-  deleteNote(noteId: string){
+  deleteNote(noteId: string) {
     this.notes = this.notes.filter(note => noteId !== note.id);
   }
 }
