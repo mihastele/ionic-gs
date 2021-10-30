@@ -1,13 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>notes</ion-title>
+    <ion-title>Pocketman Notes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-
     <app-note-item *ngFor="let note of notes" [noteItem]="note"></app-note-item>
   </ion-list>
 
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="discover">
+        <ion-icon name="list-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="offers">
+        <ion-icon name="grid-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="discover">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="offers">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
