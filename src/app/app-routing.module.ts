@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -7,7 +8,8 @@ const routes: Routes = [
     redirectTo: 'notes',
     pathMatch: 'full'
   },
-  {path: 'notes',
+  {
+    path: 'notes',
     children: [
       {
         path: '',
@@ -15,21 +17,23 @@ const routes: Routes = [
       },
       {
         path: ':noteId',
-        loadChildren: () => import('./notes/note-detail/note-detail.module').then( m => m.NoteDetailPageModule)
+        loadChildren: () => import('./notes/note-detail/note-detail.module').then(m => m.NoteDetailPageModule)
       }
     ]
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthPageModule)
   },
   {
     path: 'places',
-    loadChildren: () => import('./places/places.module').then( m => m.PlacesPageModule)
+    loadChildren: () => import('./places/places.module').then(m => m.PlacesPageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'bookings',
-    loadChildren: () => import('./bookings/bookings.module').then( m => m.BookingsPageModule)
+    loadChildren: () => import('./bookings/bookings.module').then(m => m.BookingsPageModule),
+    canLoad: [AuthGuard]
   }
 ];
 
