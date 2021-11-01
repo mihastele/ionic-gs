@@ -15,7 +15,7 @@ export class DiscoverPage implements OnInit {
   constructor(private placesService: PlacesService, private menuCtrl: MenuController) { }
 
   ngOnInit() {
-    this.loadedPlaces = this.placesService.getPlaces();
+    this.loadedPlaces = this.placesService.places;
   }
 
   onOpenMenu() {

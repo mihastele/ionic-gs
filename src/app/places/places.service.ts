@@ -14,12 +14,12 @@ export class PlacesService {
     new Place('p6', 'redwradwdae', '222d2dd2d', 'https://robohash.org/R2Qaadw.png?set=set1', 21),
   ];
 
-  getPlaces() {
+  get places() {
     return [...this._places];
   }
 
   getPlace(id: string) {
-    return { ...this._places.find(p => p.id === id) };
+    return { ...this.places.find(p => p.id === id) };
   }
 
   constructor() { }
