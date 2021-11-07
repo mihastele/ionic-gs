@@ -43,5 +43,17 @@ export class AuthPage implements OnInit {
     this.isLogin = !this.isLogin;
   }
 
-  onSumbit(form: NgForm) {}
+  onSumbit(form: NgForm) {
+    if (!form.valid) {
+      return;
+    }
+    const email = form.value.email;
+    const password = form.value.password;
+
+    if (this.isLogin) {
+      // Send request to login
+    } else {
+      // send request to signup
+    }
+  }
 }
