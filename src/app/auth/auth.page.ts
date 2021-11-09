@@ -43,7 +43,7 @@ export class AuthPage implements OnInit {
     this.isLogin = !this.isLogin;
   }
 
-  onSumbit(form: NgForm) {
+  onSubmit(form: NgForm) {
     if (!form.valid) {
       return;
     }
