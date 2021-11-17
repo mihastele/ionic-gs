@@ -47,7 +47,7 @@ export class DiscoverPage implements OnInit, OnDestroy {
       this.listedLoadedPlaces = this.relevantPlaces.slice(1);
     } else {
       this.relevantPlaces = this.loadedPlaces.filter(
-        (place) => place.id !== this.authService.userId
+        (place) => place.userId !== this.authService.userId
       );
       this.listedLoadedPlaces = this.relevantPlaces.slice(1);
     }
