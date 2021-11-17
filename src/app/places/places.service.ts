@@ -58,7 +58,7 @@ export class PlacesService {
       new Date('2019-01-01'),
       new Date('2019-12-1'),
       'abc'
-    ) /*,
+    ),
     new Place(
       'p6',
       'redwradwdae',
@@ -68,7 +68,8 @@ export class PlacesService {
       new Date('2019-01-01'),
       new Date('2019-12-1'),
       'def'
-    ),*/,
+    ),
+    ,
   ]);
 
   get places() {
