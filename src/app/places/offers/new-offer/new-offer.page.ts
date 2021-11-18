@@ -54,7 +54,7 @@ export class NewOfferPage implements OnInit {
       })
       .then((loadingEL) => {
         loadingEL.present();
-        //console.log(this.form);
+        console.log(this.form);
         this.placesService
           .addPlace(
             this.form.value.title,
